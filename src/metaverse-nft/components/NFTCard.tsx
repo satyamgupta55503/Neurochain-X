@@ -2,6 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
+import Image from "next/image"; // Import Image from next/image
 import AnimatedOrb from "@/metaverse-nft/animations/AnimatedOrb";
 
 type NFTCardProps = {
@@ -31,9 +32,11 @@ const NFTCard: React.FC<NFTCardProps> = ({
     >
       {/* Displaying the NFT image */}
       <div className="w-full h-48 rounded-xl overflow-hidden mb-4">
-        <img
+        <Image
           src={imageSrc}
           alt={title}
+          width={500} // Provide width
+          height={300} // Provide height
           className="object-cover w-full h-full"
         />
       </div>

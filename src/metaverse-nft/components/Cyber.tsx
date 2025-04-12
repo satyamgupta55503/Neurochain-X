@@ -2,6 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
+import Image from "next/image"; // Import Image from next/image
 import Pyramid3D from "@/metaverse-nft/animations/Pyramid3D";
 
 type CyberProps = {
@@ -31,9 +32,11 @@ const Cyber: React.FC<CyberProps> = ({
     >
       {/* Display image */}
       <div className="w-full h-48 rounded-xl overflow-hidden mb-4">
-        <img
+        <Image
           src={imageSrc}
           alt={title}
+          width={500} // Provide width
+          height={300} // Provide height
           className="object-cover w-full h-full"
         />
       </div>

@@ -29,7 +29,7 @@ const Metaverse = () => {
           title="Neural Genesis"
           edition="Limited Edition · 7/10"
           currentBid="14.5 NCX"
-          imageSrc="/images/neural-genesis.png"
+          imageSrc="/neural-genesis.png"
           onBid={async () => alert("Bid placed!")}
           onView3D={() => alert("Opening 3D view...")}
         />
@@ -37,7 +37,7 @@ const Metaverse = () => {
           title="Quantum Cube"
           edition="Limited Edition · 1/10"
           currentBid="12.5 NCX"
-          imageSrc="/images/quantum-cube.png"
+          imageSrc="/quantum-cube.png"
           onBid={async () => {
             alert("Bid placed!");
             return Promise.resolve();
@@ -48,7 +48,7 @@ const Metaverse = () => {
           title="Cyber Pyramid"
           edition="Limited Edition · 1/10"
           currentBid="10.0 NCX"
-          imageSrc="/images/cyber-pyramid.png"
+          imageSrc="/CyberPyramid.png"
           onBid={() => alert("Bid placed!")}
           onView3D={() => alert("Opening 3D view...")}
         />

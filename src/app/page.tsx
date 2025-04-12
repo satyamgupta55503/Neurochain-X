@@ -3,6 +3,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 
+
 import Navbar from '@/Navbar/page'
 import NeuroChainLogo from '@/home/components/NeuroChain'
 import NeuralDashboard from '@/dashboard/components/NeuralDashboard'
@@ -27,7 +28,7 @@ const fadeInUp = {
 
 export default function Page() {
   return (
-    <main className="bg-black overflow-x-hidden  ">
+    <main className="bg-black overflow-x-hidden">
       <motion.div initial="hidden" animate="visible" variants={fadeInUp}>
         <Navbar />
       </motion.div>

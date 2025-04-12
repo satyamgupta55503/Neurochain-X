@@ -2,8 +2,10 @@
 
 import React from "react";
 import { motion } from "framer-motion";
+import Image from "next/image"; // Import Image from next/image
 import AnimatedCube from "@/metaverse-nft/animations/AnimatedCube";
 
+// Type for the props passed to the component
 type NFTCardProps = {
   title: string;
   edition: string;
@@ -31,9 +33,11 @@ const QuantumCard: React.FC<NFTCardProps> = ({
     >
       {/* Show the image */}
       <div className="w-full h-48 rounded-xl overflow-hidden mb-4">
-        <img
-          src={imageSrc}
+        <Image
+          src={imageSrc} // Ensure this is either a valid URL or a path within the 'public' directory
           alt={title}
+          width={500} // Provide width
+          height={300} // Provide height
           className="object-cover w-full h-full"
         />
       </div>
@@ -43,23 +47,28 @@ const QuantumCard: React.FC<NFTCardProps> = ({
         <AnimatedCube />
       </div>
 
+      {/* Title and edition */}
       <h2 className="text-2xl font-bold text-white mb-1">{title}</h2>
       <p className="text-cyan-300 text-sm mb-2">{edition}</p>
 
+      {/* Current bid info */}
       <div className="flex justify-between items-center mb-4">
         <span className="text-sm text-gray-400">Current Bid</span>
         <span className="text-purple-400 font-semibold">{currentBid}</span>
       </div>
 
+      {/* Action buttons */}
       <div className="flex gap-3">
         <button
           onClick={onBid}
+          aria-label="Place bid"
           className="w-full py-2 rounded-lg bg-purple-400 text-black font-semibold hover:bg-purple-300 transition"
         >
           Place Bid
         </button>
         <button
           onClick={onView3D}
+          aria-label="View in 3D"
           className="px-4 py-2 rounded-lg border border-purple-500 text-purple-300 hover:bg-purple-800/30 transition"
         >
           View in 3D

@@ -4,10 +4,11 @@ import React, { useState } from "react";
 import { Slider } from "@/ai-smart-contracts/components/ui/slider";
 import { Button } from "@/ai-smart-contracts/components/ui/button";
 import { Textarea } from "@/ai-smart-contracts/components/ui/textarea";
-import { Badge } from "@/ai-smart-contracts/components/ui/badge";
 import { motion } from "framer-motion";
 import { toast } from "react-hot-toast";
 import ContractCard from "@/ai-smart-contracts/ContractCard";
+
+// Removed the unused Badge import
 
 const SmartContracts = () => {
   const [feeStructure, setFeeStructure] = useState(0.25);
