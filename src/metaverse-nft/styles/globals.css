@@ -1,0 +1,50 @@
+
+/* Custom global styles here */
+html,
+body {
+  background: linear-gradient(to bottom right, black, #0f0f0f, black);
+  color: white;
+  font-family: 'Orbitron', sans-serif;
+}
+
+/* Buttons */
+.btn-primary {
+    background-color: #22d3ee; /* Equivalent to bg-cyan-400 */
+    color: black; /* Equivalent to text-black */
+    font-weight: 600; /* Equivalent to font-semibold */
+    padding: 0.5rem 1rem; /* Equivalent to py-2 px-4 */
+    border-radius: 0.75rem; /* Equivalent to rounded-xl */
+    transition: all 0.2s ease-in-out; /* Equivalent to transition-all */
+  }
+  .btn-primary:hover {
+    background-color: #67e8f9; /* Equivalent to hover:bg-cyan-300 */
+}
+
+.btn-outline {
+    border: 1px solid #22d3ee; /* Equivalent to border-cyan-400 */
+    color: #67e8f9; /* Equivalent to text-cyan-300 */
+    border-radius: 0.75rem; /* Equivalent to rounded-xl */
+    padding: 0.5rem 1rem; /* Equivalent to py-2 px-4 */
+    transition: all 0.2s ease-in-out; /* Equivalent to transition-all */
+  }
+  .btn-outline:hover {
+    background-color: #22d3ee; /* Equivalent to hover:bg-cyan-400 */
+    color: black; /* Equivalent to hover:text-black */
+}
+
+/* Card Wrapper */
+.card-container {
+  @apply border border-cyan-400/30 rounded-xl bg-gradient-to-br from-black via-[#111] to-black shadow-lg p-5 transition-all duration-300;
+}
+
+/* Typography */
+h1,
+h2,
+h3 {
+  @apply font-bold text-white;
+}
+
+.text-glow {
+  text-shadow: 0 0 10px #00ffff55;
+}
+
