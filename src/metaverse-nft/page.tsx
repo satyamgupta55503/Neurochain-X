@@ -1,16 +1,15 @@
 import React from "react";
 import { motion } from "framer-motion";
-import NFTCard from "@/metaverse-nft/components/NFTCard"; // adjust path if needed
+import NFTCard from "@/metaverse-nft/components/NFTCard";
 import Cyber from "./components/Cyber";
 import QuantumCard from "@/metaverse-nft/components/QuantumCube";
-import AuctionCard from "@/metaverse-nft/components/AuctionCard"; // adjust path if needed
-import NeuroVerseMetaspace from "@/metaverse-nft/components/NeuroVerseMetaspace"; // adjust path if needed
+import AuctionCard from "@/metaverse-nft/components/AuctionCard";
+import NeuroVerseMetaspace from "@/metaverse-nft/components/NeuroVerseMetaspace";
 import ProposalCard from "@/metaverse-nft/components/ProposalCard";
-
 
 const Metaverse = () => {
   return (
-    <div className="bg-gradient-to-br from-black via-gray-900 to-black text-white ">
+    <div className="bg-gradient-to-br from-black via-gray-900 to-black text-white min-h-screen p-10">
       <div className="text-center mb-14">
         <motion.h1
           initial={{ opacity: 0, y: -20 }}
@@ -21,20 +20,17 @@ const Metaverse = () => {
           Metaverse & NFT Zone
         </motion.h1>
         <p className="text-gray-400 mt-4 text-sm md:text-base">
-          Explore and trade next-generation digital assets in the neural
-          metaverse
+          Explore and trade next-generation digital assets in the neural metaverse
         </p>
       </div>
 
-      <main className="flex justify-center space-between flex-wrap gap-8">
+      <main className="flex justify-center flex-wrap gap-8">
         <NFTCard
           title="Neural Genesis"
           edition="Limited Edition · 7/10"
           currentBid="14.5 NCX"
           imageSrc="/images/neural-genesis.png"
-          onBid={async () => {
-            alert("Bid placed!");
-          }}
+          onBid={async () => alert("Bid placed!")}
           onView3D={() => alert("Opening 3D view...")}
         />
         <QuantumCard
@@ -42,7 +38,6 @@ const Metaverse = () => {
           edition="Limited Edition · 1/10"
           currentBid="12.5 NCX"
           imageSrc="/images/quantum-cube.png"
-          // rarityColor=""
           onBid={async () => {
             alert("Bid placed!");
             return Promise.resolve();
@@ -52,13 +47,9 @@ const Metaverse = () => {
         <Cyber
           title="Cyber Pyramid"
           edition="Limited Edition · 1/10"
-          currentBid="XX.5 NCX"
+          currentBid="10.0 NCX"
           imageSrc="/images/cyber-pyramid.png"
-          // rarityColor=""
-          onBid={async () => {
-            alert("Bid placed!");
-            return Promise.resolve();
-          }}
+          onBid={() => alert("Bid placed!")}
           onView3D={() => alert("Opening 3D view...")}
         />
         <AuctionCard />

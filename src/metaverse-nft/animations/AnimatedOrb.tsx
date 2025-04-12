@@ -1,18 +1,8 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
 export default function AnimatedOrb() {
-  const [radius, setRadius] = useState(40);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setRadius((r) => (r === 40 ? 48 : 40));
-    }, 2000);
-    return () => clearInterval(interval);
-  }, []);
-
   return (
     <div className="flex items-center justify-center w-40 h-40 mb-19 bg-transparent perspective p-2">
       <motion.div

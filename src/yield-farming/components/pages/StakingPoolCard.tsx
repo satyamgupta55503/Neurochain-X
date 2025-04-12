@@ -32,7 +32,7 @@ export default function StakingPoolCard() {
         <CardStat title="Current APY" value="42.8%" sub="+2.4%" />
         <CardStat title="TVL" value="$43.2M" />
         <CardStat title="Lock Period" value="7-90 days" />
-        <CardStat title="Neural Score" value="94/100" color="text-green-400" />
+        <CardStat title="Neural Score" value="94/100" />
       </div>
 
       <div className="mb-6">
@@ -80,7 +80,7 @@ export default function StakingPoolCard() {
   );
 }
 
-function CardStat({ title, value, sub, color }: { title: string; value: string; sub?: string; color?: string }) {
+function CardStat({ title, value, sub }: { title: string; value: string; sub?: string }) {
   return (
     <div className="bg-black rounded-lg p-4 shadow-inner border border-cyan-400/20">
       <p className="text-xs text-gray-400 mb-1">{title}</p>

@@ -2,7 +2,8 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import AnimatedOrb from "@/metaverse-nft/animations/AnimatedOrb"; 
+import AnimatedOrb from "@/metaverse-nft/animations/AnimatedOrb";
+
 type NFTCardProps = {
   title: string;
   edition: string;
@@ -28,7 +29,18 @@ const NFTCard: React.FC<NFTCardProps> = ({
       whileHover={{ scale: 1.03 }}
       className="bg-[#0f0f0f] border border-cyan-500/30 p-6 rounded-2xl w-full max-w-sm shadow-lg hover:shadow-cyan-500/20 transition-all duration-300 backdrop-blur-xl relative"
     >
-   <div> <AnimatedOrb /></div>
+      {/* Displaying the NFT image */}
+      <div className="w-full h-48 rounded-xl overflow-hidden mb-4">
+        <img
+          src={imageSrc}
+          alt={title}
+          className="object-cover w-full h-full"
+        />
+      </div>
+
+      <div className="mb-4">
+        <AnimatedOrb />
+      </div>
 
       <h2 className="text-2xl font-bold text-white mb-1">{title}</h2>
       <p className="text-cyan-300 text-sm mb-2">{edition}</p>

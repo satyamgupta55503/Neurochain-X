@@ -1,15 +1,13 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Slider } from "@/ai-smart-contracts/components/ui/slider";
-import { Switch } from "@/ai-smart-contracts/components/ui/switch";
 import { Button } from "@/ai-smart-contracts/components/ui/button";
 import { Textarea } from "@/ai-smart-contracts/components/ui/textarea";
 import { Badge } from "@/ai-smart-contracts/components/ui/badge";
 import { motion } from "framer-motion";
 import { toast } from "react-hot-toast";
 import ContractCard from "@/ai-smart-contracts/ContractCard";
-
 
 const SmartContracts = () => {
   const [feeStructure, setFeeStructure] = useState(0.25);
@@ -39,7 +37,7 @@ const SmartContracts = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b  text-white p-6 font-sans">
+    <div className="min-h-screen bg-gradient-to-b text-white p-6 font-sans">
       <motion.h1
         initial={{ opacity: 0, y: -30 }}
         animate={{ opacity: 1, y: 0 }}
@@ -69,8 +67,8 @@ const SmartContracts = () => {
             >
               <div className="flex justify-between items-center">
                 <p className="text-cyan-300">{t.name}</p>
-                <div className={`bg-${t.color}-600 text-white px-2 py-1 rounded`}>
-                  <Badge>{t.label}</Badge>
+                <div className={`text-white px-2 py-1 rounded`} style={{ backgroundColor: t.color }}>
+                  <span>{t.label}</span>
                 </div>
               </div>
               <p className="text-xs text-gray-400">Complexity: Medium</p>
@@ -123,8 +121,7 @@ const SmartContracts = () => {
         >
           <h2 className="text-xl font-semibold mb-4">AI Insights</h2>
           <p>
-            Neural Efficiency:{" "}
-            <span className="text-green-400 font-bold">94%</span>
+            Neural Efficiency: <span className="text-green-400 font-bold">94%</span>
           </p>
           <ul className="mt-4 space-y-2 text-sm text-gray-300">
             <li className="bg-gray-800 p-2 rounded">
@@ -139,8 +136,7 @@ const SmartContracts = () => {
           </ul>
           <div className="mt-6">
             <p>
-              Gas Optimization:{" "}
-              <span className="text-green-400 font-bold">-42%</span>
+              Gas Optimization: <span className="text-green-400 font-bold">-42%</span>
             </p>
             <p className="text-sm">
               Standard: 142,540 gas | Neural: 62,573 gas

@@ -1,15 +1,23 @@
-'use client';
+"use client";
 
-import { motion } from 'framer-motion';
-import { FaArrowUpRightFromSquare } from 'react-icons/fa6';
-import { Card } from '@/yield-farming/components/ui/card';
-import { Progress } from '@/yield-farming/components/ui/progress';
+import { motion } from "framer-motion";
+import Image from "next/image"; // Import Image for optimization
+
+// Define a simple Progress component
+const Progress = ({ value, className }: { value: number; className?: string }) => (
+  <div className={`relative w-full bg-gray-700 rounded-full overflow-hidden ${className}`}>
+    <div
+      className="absolute top-0 left-0 h-full bg-cyan-500"
+      style={{ width: `${value}%` }}
+    />
+  </div>
+);
 
 const CardContainer = ({ children }: { children: React.ReactNode }) => (
   <motion.div
     initial={{ opacity: 0, y: 40, scale: 0.98 }}
     animate={{ opacity: 1, y: 0, scale: 1 }}
-    transition={{ duration: 0.7, ease: 'easeOut' }}
+    transition={{ duration: 0.7, ease: "easeOut" }}
     className="rounded-2xl p-5 bg-gradient-to-br from-[#0a0f24]/80 via-[#0c102e]/90 to-[#000000]/80 border border-white/10 shadow-[0_0_25px_rgba(0,255,255,0.07),_0_0_60px_rgba(100,0,255,0.05)] backdrop-blur-xl"
   >
     {children}
@@ -40,7 +48,7 @@ export default function NeuralStatsPanel() {
 
         <div className="mt-5 p-3 bg-black/40 rounded-xl flex items-center gap-3 shadow-inner shadow-cyan-900/20">
           <div className="bg-cyan-500/30 p-2 rounded-full">
-            <img src="/icons/lock.svg" alt="lock" className="w-5 h-5" />
+            <Image src="/icons/lock.svg" alt="lock" className="w-5 h-5" width={20} height={20} />
           </div>
           <div>
             <div className="text-sm text-gray-300">Total Value Locked</div>
@@ -59,9 +67,9 @@ export default function NeuralStatsPanel() {
 
         <div className="mt-4 flex gap-4">
           {[
-            { label: 'Staking', value: '45%' },
-            { label: 'Liquidity', value: '35%' },
-            { label: 'Synthetic', value: '20%' },
+            { label: "Staking", value: "45%" },
+            { label: "Liquidity", value: "35%" },
+            { label: "Synthetic", value: "20%" },
           ].map(({ label, value }) => (
             <div key={label} className="text-sm text-white bg-black/30 rounded-lg p-3 w-full text-center">
               <span className="block text-xs text-gray-400">{label}</span>
@@ -85,14 +93,14 @@ export default function NeuralStatsPanel() {
 
         <ul className="space-y-3">
           {[
-            { name: 'NeuroChain X', icon: '/icons/ncx.svg', value: '42.8%' },
-            { name: 'Ethereum 2.0', icon: '/icons/eth.svg', value: '4.5%' },
-            { name: 'Traditional Finance', icon: '/icons/tf.svg', value: '2.1%' },
-            { name: 'NCX Advantage Ratio', icon: '/icons/ratio.svg', value: '9.5x' },
+            { name: "NeuroChain X", icon: "/icons/ncx.svg", value: "42.8%" },
+            { name: "Ethereum 2.0", icon: "/icons/eth.svg", value: "4.5%" },
+            { name: "Traditional Finance", icon: "/icons/tf.svg", value: "2.1%" },
+            { name: "NCX Advantage Ratio", icon: "/icons/ratio.svg", value: "9.5x" },
           ].map((item, i) => (
             <li key={i} className="flex justify-between items-center bg-black/30 p-3 rounded-xl shadow-inner shadow-cyan-800/10">
               <div className="flex items-center gap-3">
-                <img src={item.icon} alt={item.name} className="w-6 h-6" />
+                <Image src={item.icon} alt={item.name} className="w-6 h-6" width={24} height={24} />
                 <span className="text-white">{item.name}</span>
               </div>
               <span className="font-semibold text-cyan-300">{item.value}</span>

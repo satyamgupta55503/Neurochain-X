@@ -3,7 +3,8 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Pyramid3D from "@/metaverse-nft/animations/Pyramid3D";
-type Cyber = {
+
+type CyberProps = {
   title: string;
   edition: string;
   currentBid: string;
@@ -12,7 +13,7 @@ type Cyber = {
   onView3D: () => void;
 };
 
-const Cyber: React.FC<Cyber> = ({
+const Cyber: React.FC<CyberProps> = ({
   title,
   edition,
   currentBid,
@@ -28,7 +29,19 @@ const Cyber: React.FC<Cyber> = ({
       whileHover={{ scale: 1.03 }}
       className="bg-[#0f0f0f] border border-amber-500/30 p-6 rounded-2xl w-full max-w-sm shadow-lg hover:shadow-amber-500/20 transition-all duration-300 backdrop-blur-xl relative"
     >
-    <div> <Pyramid3D /></div>
+      {/* Display image */}
+      <div className="w-full h-48 rounded-xl overflow-hidden mb-4">
+        <img
+          src={imageSrc}
+          alt={title}
+          className="object-cover w-full h-full"
+        />
+      </div>
+
+      {/* Optional 3D animation */}
+      <div className="mb-4">
+        <Pyramid3D />
+      </div>
 
       <h2 className="text-2xl font-bold text-white mb-1">{title}</h2>
       <p className="text-cyan-300 text-sm mb-2">{edition}</p>

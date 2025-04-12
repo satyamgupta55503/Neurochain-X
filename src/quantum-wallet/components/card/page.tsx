@@ -1,8 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { CheckCircle, ArrowRightLeft } from "lucide-react";
-import { Badge } from "@/ai-smart-contracts/components/ui/badge";
+import { CheckCircle } from "lucide-react"; 
 
 export default function Cards() {
   return (
@@ -76,7 +75,7 @@ export default function Cards() {
         className="rounded-2xl p-6 border border-purple-800/50 bg/90  shadow-lg"
       >
         <h2 className="text-xl font-semibold mb-4 text-white">Recent Activity</h2>
-        <div className="space-y-5 text-sm   ">
+        <div className="space-y-5 text-sm">
           <div className="flex justify-between items-start">
             <div>
               <p className="text-white">Authentication Successful</p>
