@@ -15,7 +15,7 @@ export default function ContractsPage() {
         transition={{ duration: 0.2, ease: "easeOut" }}
         className="text-4xl md:text-5xl text-center mb-10 font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500 drop-shadow-lg"
       >
-        Your Neural Smart Contracts
+        
       </motion.h1>
 
       {/* 🧩 3 Cards Grid */}

@@ -53,8 +53,8 @@ export default function QuantumWallet() {
   };
 
   return (
-    <div className=" bg-gradient-to-br from-black via-gray-900 to-black text-white p-4">
-      <div className=" mx-auto  border border-white/20 p-6 rounded-2xl bg-black/30 backdrop-blur-lg shadow-xl">
+    <div className="bg-gradient-to-br from-black via-gray-900 to-black text-white p-4">
+      <div className="mx-auto border border-white/20 p-6 rounded-2xl bg-black/30 backdrop-blur-lg shadow-xl">
         {/* Heading */}
         <motion.h1
           initial={{ opacity: 0, y: -10 }}
@@ -70,7 +70,7 @@ export default function QuantumWallet() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5 }}
-          className="flex flex-row-3 gap-4 p-6 rounded-xl border border-white/10 bg-white/5 backdrop-blur-xl"
+          className="flex flex-wrap gap-4 p-6 rounded-xl border border-white/10 bg-white/5 backdrop-blur-xl"
         >
           {authSteps.map((step, index) => (
             <motion.div
@@ -89,10 +89,10 @@ export default function QuantumWallet() {
               {authenticated && <FiCheckCircle className="text-green-400 ml-auto" size={20} />}
             </motion.div>
           ))}
-          <div className="mt-6 flex justify-center">
+          <div className="mt-6 flex justify-center w-full">
             <button
               onClick={handleAuth}
-              className="px-6 py-2 bg-cyan-400 text-black font-semibold rounded-xl shadow-md hover:bg-cyan-300 transition-all duration-300"
+              className="px-6 py-2 bg-cyan-400 text-black font-semibold rounded-xl shadow-md hover:bg-cyan-300 transition-all duration-300 w-full sm:w-auto"
               disabled={authenticating}
             >
               {authenticating ? "Authenticating..." : "Authenticate"}
@@ -100,19 +100,19 @@ export default function QuantumWallet() {
           </div>
         </motion.div>
 
-        {/* Wallet Balance Cards - Vertical */}
+        {/* Wallet Balance Cards */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.2, duration: 0.6 }}
-          className="mt-10 flex flex-row-3 gap-6"
+          className="mt-10 flex flex-wrap gap-6 justify-center"
         >
           {balances.map((bal, idx) => (
             <motion.div
               key={idx}
               whileHover={{ scale: 1.02 }}
               transition={{ type: "spring", stiffness: 120 }}
-              className="bg-[#0f0f0f] p-5 rounded-xl border border-white/10 shadow-md"
+              className="bg-[#0f0f0f] p-5 rounded-xl border border-white/10 shadow-md w-full sm:w-80"
             >
               <div className="flex justify-between items-center mb-4">
                 <span className={`${bal.color} font-bold text-lg`}>{bal.symbol}</span>
@@ -139,18 +139,16 @@ export default function QuantumWallet() {
           transition={{ delay: 0.4, duration: 0.5 }}
           className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-6"
         >
-          {[
-            { label: "Swap", icon: "↔" },
-            { label: "Stake", icon: "$" },
-            { label: "NFTs", icon: "🖼️" }
-          ].map((action, i) => (
-            <button
-              key={i}
-              className="w-full py-4 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition text-lg font-semibold flex items-center justify-center gap-3"
-            >
-              {action.icon} {action.label}
-            </button>
-          ))}
+          {[{ label: "Swap", icon: "↔" }, { label: "Stake", icon: "$" }, { label: "NFTs", icon: "🖼️" }].map(
+            (action, i) => (
+              <button
+                key={i}
+                className="w-full py-4 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition text-lg font-semibold flex items-center justify-center gap-3"
+              >
+                {action.icon} {action.label}
+              </button>
+            )
+          )}
         </motion.div>
       </div>
     </div>

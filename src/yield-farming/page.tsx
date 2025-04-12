@@ -1,4 +1,5 @@
 "use client";
+
 import YieldFarmingHeader from "@/yield-farming/components/YieldFarmingHeader";
 import StakingPools from "@/yield-farming/components/pages/StakingPools";
 import React from "react";
@@ -9,13 +10,24 @@ import NeuralAutoCompound from "@/yield-farming/components/pages/NeuralAutoCompo
 
 const YieldFarming = () => {
   return (
-    <div className=" bg-gradient-to-b  from-[#1a1a1a] to-[#14141f]">
+    <div className="bg-gradient-to-b from-[#1a1a1a] to-[#14141f] min-h-screen">
+      {/* Header */}
       <YieldFarmingHeader />
+
+      {/* Staking Pools Section */}
       <StakingPools />
-      <div className="flex mt-4  bg-gradient-to-b from-[#1a1a1a] to-[#14141f]">
-        <StakingPoolCard />
-        <YourStaking />
+
+      {/* Staking Pool Card and Your Staking Section */}
+      <div className="flex flex-wrap gap-6 mt-4 bg-gradient-to-b from-[#1a1a1a] to-[#14141f] px-4 sm:px-6">
+        <div className="w-full sm:w-1/2 lg:w-1/3">
+          <StakingPoolCard />
+        </div>
+        <div className="w-full sm:w-1/2 lg:w-2/3">
+          <YourStaking />
+        </div>
       </div>
+
+      {/* Stats and Auto Compound Section */}
       <NeuralStatsPanel />
       <NeuralAutoCompound />
     </div>
